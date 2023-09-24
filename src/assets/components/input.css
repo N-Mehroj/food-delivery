@@ -1,0 +1,32 @@
+@tailwind components;
+
+@layer components {
+  .input {
+    @apply  block px-3 py-1.5 text-base text-neutral-600 placeholder-gray-400 transition duration-500 ease-in-out transform border-2 rounded-lg  focus:outline-none   bg-white;
+  }
+
+  .input_primary {
+    @apply border-gray-200 hover:border-blue-200 outline-blue-500 focus:ring-offset-blue-300 dark:hover:bg-transparent dark:focus:ring-offset-blue-500 dark:border-blue-500 dark:hover:border-blue-400;
+  }
+
+  .input_secondary {
+    @apply border-gray-200 hover:border-gray-300 outline-gray-400 focus:ring-offset-gray-300 dark:hover:bg-transparent dark:focus:ring-offset-gray-500 dark:border-gray-500 dark:hover:border-gray-400;
+  }
+
+  .input_danger {
+    @apply border-gray-200 hover:border-red-200 outline-red-500 focus:ring-offset-red-300 dark:hover:bg-transparent dark:focus:ring-offset-red-500 dark:border-red-500 dark:hover:border-red-400;
+  }
+
+  .input_success {
+    @apply border-gray-200 hover:border-emerald-400 outline-emerald-500 focus:ring-offset-emerald-500 dark:hover:bg-transparent dark:focus:ring-offset-emerald-500 dark:border-emerald-500 dark:hover:border-emerald-400;
+  }
+
+  .input_warning {
+    @apply border-gray-200 hover:border-orange-200 outline-orange-500 focus:ring-offset-orange-300 dark:hover:bg-transparent dark:focus:ring-offset-orange-500 dark:border-orange-500 dark:hover:border-orange-400;
+  }
+
+  .input_indigo {
+    @apply border-gray-200 hover:border-indigo-200 outline-indigo-500 focus:ring-offset-indigo-300 dark:hover:bg-transparent dark:focus:ring-offset-indigo-500 dark:border-indigo-500 dark:hover:border-indigo-400;
+  }
+
+}

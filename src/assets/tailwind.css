@@ -1,0 +1,61 @@
+@import url("./components/index.css");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  ::selection {
+    background-color: #066d98;
+    color: white;
+  }
+
+ 
+
+  h1 {
+    @apply text-3xl font-semibold py-1 text-gray-800;
+  }
+  h2 {
+    @apply text-2xl font-semibold py-1 text-gray-800;
+  }
+  h3 {
+    @apply text-xl font-semibold py-1 text-gray-800;
+  }
+  h4 {
+    @apply text-lg font-semibold py-1 text-gray-800;
+  }
+  h5 {
+    @apply text-base font-semibold py-1 text-gray-800;
+  }
+  h6 {
+    @apply text-sm font-semibold py-1 text-gray-800;
+  }
+  label {
+    @apply font-medium;
+  }
+  p {
+    @apply py-1;
+  }
+  input[type="checkbox"] {
+    @apply w-4 h-4 active:ring-4 transition cursor-pointer;
+  }
+  body {
+    @apply overflow-x-hidden;
+  }
+}
+
+@layer components {
+  .search_input {
+    @apply relative  m-0 block w-[1px] min-w-0 flex-auto rounded border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 py-[0.25rem] text-base font-normal leading-[1.6] text-neutral-700 outline-none transition duration-200 ease-in-out focus:z-[3] focus:border-primary focus:text-neutral-700 focus:shadow-[inset_0_0_0_1px_rgb(59,113,202)] focus:!outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:focus:border-primary;
+  }
+}

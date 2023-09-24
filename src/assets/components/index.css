@@ -1,0 +1,77 @@
+@import url("./button.css");
+@import url("./input.css");
+
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+
+@tailwind components;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  font-family: "Inter", sans-serif;
+}
+
+.h-85 {
+  height: 80vh;
+}
+.rounded-50 {
+  border-radius: 50px;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-toggle {
+  background-color: #f0f0f0;
+  border: none;
+  padding: 10px;
+}
+/* nav .mantine-1nd5hzs:focus, .mantine-1nd5hzs:focus-within{
+  border-color: #ced4da;
+} */
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 5px);
+  right: 0;
+  list-style-type: none;
+}
+
+.dropdown-menu li {
+  cursor: pointer;
+}
+
+.dropdown-menu li:hover {
+  background-color: #f0f0f0;
+}
+
+.scroll-width-none::-webkit-scrollbar {
+    display: none;
+}
+
+
+.scroll-width-none {
+  -ms-overflow-style: none; 
+  scrollbar-width: none;  
+}
+
+
+
+@layer components {
+  .category_block {
+    @apply  rounded-[10px] !cursor-pointer w-full;
+  }
+  .category_block img {
+    @apply  !h-40  rounded-[10px] select-none w-full;
+  }
+  .slider_button {
+    @apply text-xl xl:text-2xl bg-white hover:bg-gray-50 duration-150 ease-in-out rounded-full p-2.5 cursor-pointer w-fit absolute z-30 top-[40%]   !overflow-visible;
+  }
+
+  .container {
+    @apply px-[1rem]  lg:px-[2rem] 2xl:px-[2rem] mr-auto ml-auto 2xl:!max-w-[1536px] !max-w-full;
+  }
+}
