@@ -27,14 +27,24 @@
 
     class Expressapi extends Controller
     {
-        function getData(){
 
-            return['name'=> 'ali'];
+        function getData(Request $request){
+            $header = $request->header('Authorization');
+            $token = str_replace('Token ','', $header);
+            if($token != null){
+            $user = User::where('token', $token)->first();
+                return $user;
+            }else{
+                return response(null, 404);
+            }
+
         }
 
         // public function __construct(ChackController $chackController) {
         //     $this->chackController = $chackController;
         // }
+
+
         public function signup(Request $request)
         {
             $data = $request->all();
@@ -54,19 +64,13 @@
                 $password = $dataObj['password'];
                 $status = $dataObj['type'];
 
-
-
-            //  return $phoneNumber.' '.$password.' '.$firstName.' '.$lastName.' '.$email;
-            // return $recdata['signUpData']['firstName'];
-
               $validator = Validator::make($dataObj, [
                         'fullName' => 'required|min:3',
                         'email' => 'required|unique:users,email',
-                        // 'phoneNumber' => 'required',
                         'password' => 'required|min:6',
                     ]);
             if ($validator->fails()) { return response()->json(['errors' => $validator->errors()], 400); }
-
+            if($status == 2){ $status = 'person'; }else{$status = 'resturans';}
             $user = new User([
                 'full_name' => $fullName,
                 'email' => $email,
@@ -110,15 +114,22 @@
 
         // }
 
-        public function login (Request $request) {
+        public function login(Request $request) {
             $data = $request->all();
 
-
             $recdata = json_decode(json_encode($data), true);
-            $dataObj = $recdata['userLogin'];
+            // return $recdata['signUpData'];
+
+            $dataObj = $recdata['user'];
+            // $dataObj =  $recdata->get('firstName');
+
+            // return $dataObj;
             $email = $dataObj['email'];
             $password = $dataObj['password'];
-            // return $recdata['signUpData'];
+            // $dataObj =  $dataObj->get('email');
+            // return $data['login']['email'];
+
+
 
 
             $validator = Validator::make($dataObj, [
@@ -151,7 +162,9 @@
         }
         public function allUserData (Request $request) {
             $users = User::all();
-            return $users;
+            if($users != null) {
+                return $users;
+            }
         }
 
         public function owlogin (Request $request){
@@ -183,7 +196,7 @@
                         $urlToken = Hash::make($token);
                         $urlToken = str_replace("/","00001111",$urlToken);
 
-                        // $owerdata = Owners::where('ad_email', $email)->first();
+                        $owerdata = Owners::where('ad_email', $email)->first();
                         $ower->ad_verified_code = $token;
                         $ower->ad_url = $urlToken;
                         $ower->save();

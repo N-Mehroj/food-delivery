@@ -18,11 +18,13 @@ use App\Http\Controllers\ChackConroller;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::get("/user",[Expressapi::class,'getData']);
+
 Route::get("data",[Expressapi::class,'getData']);
 Route::post('usersign', [Expressapi::class, 'signup']);
 Route::post('phone', [Expressapi::class, 'phone']);
 
-Route::post('userlogin', [Expressapi::class, 'login']);
+Route::post('login', [Expressapi::class, 'login']);
 Route::get('userdata', [Expressapi::class, 'allUserData']);
 
 

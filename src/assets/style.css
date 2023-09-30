@@ -99,9 +99,12 @@ body {
 .bloc{
     transition:opacity 0.5s , margin 1s linear;
 }
-/* .box-const{
-    opacity: 0;
-} */
+.bg-bl{
+    background: #4E60FF !important;
+}
+.bg-gr{
+    background: #19bf6f !important;
+}
 
 
 

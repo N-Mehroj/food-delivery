@@ -73,7 +73,7 @@
                 <h5 class="text-[#4E60FF] px-5 py-4 rounded-md bg-white border transition-colors border-[#4E60FF] cursor-pointer" style="align-items: center;">Load More</h5>
               </div>
            </div>
-
+           <router-view name="login"></router-view> 
     </div>
 </template>
 <script>

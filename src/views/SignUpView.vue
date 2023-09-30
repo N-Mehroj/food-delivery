@@ -17,45 +17,37 @@
             <div class="cl">
                 <div class="step inline-blocks flex">
                     <div class="rounded-full w-4 h-4 flex justify-center bg-[#687AFD]"
-                        :class="[{ 'bg-[#687AFD]': step == 1 }, { 'bg-[#19bf6f]': step > 1 }]">
+                        :class="[{ 'bg-[#687AFD]': step == 1 }, { 'bg-gr': step > 1 }]">
                         <v-icon name="bi-check" class="mb-1 text-white "
                             :class="[{ 'opacity-0': step == 1 }, { 'opacity-1': step > 1 }]"></v-icon>
                     </div>
                     <div :class="[{ 'bg-[#8CDFB7]': step > 1 }, { 'bg-[#E3E3E8]': step == 1 }]"
                         class="box transition-all rounded-xl w-32 h-[3px]  inline-block my-auto mx-3 ">
                     </div>
-
                     <div class="rounded-full w-4 h-4 flex justify-center bg-[#687AFD]"
-                        :class="[{ 'bg-[#C7C8D2]': step < 2 }, { 'bg-[#19bf6f]': step > 2 }]">
+                        :class="[{ 'bg-[#C7C8D2]': step < 2 }, { 'bg-gr': step > 2 }]">
                         <v-icon name="bi-check" class="mb-1 text-white "
                             :class="[{ 'opacity-0': step <= 2 }, { 'opacity-1': step > 2 }]"></v-icon>
                     </div>
-
-
                     <div :class="[{ 'bg-[#8CDFB7]': step > 2 }, { 'bg-[#E3E3E8]': step <= 2 }]"
                         class="box transition-all rounded-xl w-32 h-[3px]  inline-block my-auto mx-3 ">
                     </div>
 
-
                     <div class="rounded-full w-4 h-4 flex justify-center   bg-[#687AFD]"
-                        :class="[{ 'bg-[#C7C8D2]': step < 3 }, { 'bg-[#19bf6f]': step > 3 }]">
+                        :class="[{ 'bg-[#C7C8D2]': step < 3 }, { 'bg-gr': step > 3 }]">
                         <v-icon name="bi-check" class="mb-1 text-white "
                             :class="[{ 'opacity-0': step <= 3 }, { 'opacity-1': step > 3 }]"></v-icon>
                     </div>
-
                     <div :class="[{ 'bg-[#8CDFB7]': step > 3 }, { 'bg-[#E3E3E8]': step <= 3 }]"
                         class="box transition-all rounded-xl w-32 h-[3px]  inline-block my-auto mx-3 ">
                     </div>
-
                     <div class="rounded-full w-4 h-4 flex justify-center  bg-[#687AFD]"
-                        :class="[{ 'bg-[#C7C8D2]': step < 4 }, { 'bg-[#19bf6f]': step > 4 }]">
+                        :class="[{ 'bg-[#C7C8D2]': step < 4 }, { 'bg-gr': step > 4 }]">
                         <v-icon name="bi-check" class="mb-1 text-white "
                             :class="[{ 'opacity-0': step <= 4 }, { 'opacity-1': step > 4 }]"></v-icon>
                     </div>
-
-
-
                 </div>
+                
                 <div class="mt-4 inline-block font-semibold tracking-wider text-[#C7C8D2]">
                     <p class="inline " :class="[{ 'text-black': step >= 1 }]">Account type</p>
                     <p class="inline ml-16" :class="[{ 'text-black': step >= 2 }]">Personal details</p>
@@ -71,7 +63,7 @@
                     <div @click="type(true)" :class="[{ 'border-[#4E60FF] bg-[#F3F4FF]': typeName }]"
                         class="transition-all mt-5 w-96 border-2  py-3 px-5 rounded-2xl flex cursor-pointer">
                         <div class="inline-block mt-1 transition-all">
-                            <div class="bg-[#EDEEF2] inline-block p-3 rounded-xl" :class="[{ 'bg-[#4e60ff] ': typeName }]">
+                            <div class="bg-[#EDEEF2] inline-block p-3 rounded-xl" :class="[{ 'bg-bl ': typeName }]">
                                 <v-icon name="oi-person" :class="[{ 'text-[#fff]': typeName }]" class="text-[#A1A2B4]"
                                     scale="1.3" />
                             </div>
@@ -84,10 +76,10 @@
                     <div @click="type(false)" :class="[{ 'border-[#4E60FF] bg-[#F3F4FF]': !typeName }]"
                         class="transition-all cursor-pointer mt-5 w-96 border-2 py-3 px-5 rounded-2xl flex">
                         <div class="inline-block mt-1 transition-all">
-                            <div :class="[{ 'bg-[#4e60ff] ': !typeName }]"
+                            <div :class="[{ 'bg-bl': !typeName }]"
                                 class="inline-block transition-all bg-[#EDEEF2] p-3 rounded-xl">
-                                <v-icon name="ri-shopping-bag-3-line" :class="[{ 'text-[#a1a2b4]': typeName }]"
-                                    class="text-[#ffffff]" scale="1.3" />
+                                <v-icon name="ri-shopping-bag-3-line" :class="[{ 'text-[#fff]': !typeName }]" class="text-[#A1A2B4]"
+                                    scale="1.3" />
                             </div>
                         </div>
                         <div class="flex flex-col my-auto ml-5">
@@ -99,6 +91,7 @@
                         class="hover:text-[#4E60FF] w-96 bg-[#4E60FF] mt-10 text-white py-3 rounded-lg hover:bg-white border transition-colors border-[#4E60FF]">Continue</button>
 
                 </div>
+
                 <div class="mt-28  bloc" :class="[{ 'steps hidden': step > 2 }, { 'hidden': step != 2 }]">
                     <div class="inline-block pr-32">
                         <h1 class="text-6xl">Personal details</h1>
@@ -135,7 +128,7 @@
                                     authentification</label>
                             </div>
                             <button @click="onSubmitPhone(3)" type="submit"
-                                class="hover:text-[#4E60FF] w-full bg-[#4E60FF] mt-6 text-white py-3 rounded-lg hover:bg-white border transition-colors border-[#4E60FF]">Continue</button>
+                                class="hover:text-[#4E60FF] w-full bg-bl mt-6 text-white py-3 rounded-lg hover:bg-white border transition-colors border-[#4E60FF]">Continue</button>
                             <p class="text-[#A1A2B4] mt-4 cursor-pointer  text-center" @click="back(3)">Back</p>
                         </form>
                     </div>
@@ -168,15 +161,17 @@ import { signUp, signImg } from '../constants/'
 export default {
     data() {
         return {
+            step: 1,
+            signUp,
+            signImg,
+            
             typeName: true,
             fullName: "",
             email: "",
             phone: "",
             password: "",
 
-            step: 1,
-            signUp,
-            signImg,
+
 
 
         }
@@ -198,9 +193,10 @@ export default {
             }
             this.$store.dispatch('register', data)
                 .then(user => {
-                    console.log('user', user)
-                    console.log(this.step)
                     this.step = number
+                    console.log('user', user)
+
+                    console.log(this.step)
                     // this.$router.push({ name: 'home' })
                 })
                 .catch(err => console.log('error', err))
@@ -237,7 +233,6 @@ export default {
     },
 }
 </script>
-
 
 <style scoped>
 /**
