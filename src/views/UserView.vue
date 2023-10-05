@@ -2,30 +2,35 @@
   <div class="container flex">
     <div class="settings inline-block" style="width: 400px;">
       <h1>Settings</h1>
-      <div @click="type(1)" :class="[{ 'border-[#4E60FF] bg-[#F3F4FF]': step == 1 }]"
-        class="transition-all mt-5   border-2 flex py-3 px-5 rounded-2xl cursor-pointer ">
-        <div class="inline-block mt-1 transition-all">
-          <div class="bg-[#EDEEF2] inline-block p-3 rounded-xl" :class="[{ 'bg-bl ': step == 1 }]">
-            <v-icon name="oi-person" :class="[{ 'text-[#fff]': step == 1 }]" class="text-[#A1A2B4]" scale="1.3" />
+      <RouterLink :to="{ name: 'user' }">
+        <div @click="type(1)" :class="[{ 'border-[#4E60FF] bg-[#F3F4FF]': step == 1 }]"
+          class="transition-all mt-5   border-2 flex py-3 px-5 rounded-2xl cursor-pointer ">
+          <div class="inline-block mt-1 transition-all">
+            <div class="bg-[#EDEEF2] inline-block p-3 rounded-xl" :class="[{ 'bg-bl ': step == 1 }]">
+              <v-icon name="oi-person" :class="[{ 'text-[#fff]': step == 1 }]" class="text-[#A1A2B4]" scale="1.3" />
+            </div>
+          </div>
+          <div class="flex flex-col my-auto ml-5">
+            <h5 class="p-0 block">Personal</h5>
+            <p class="p-0 block">Keep your order in one place</p>
           </div>
         </div>
-        <div class="flex flex-col my-auto ml-5">
-          <h5 class="p-0 block">Personal</h5>
-          <p class="p-0 block">Keep your order in one place</p>
-        </div>
-      </div>
-      <div @click="type(2)" :class="[{ 'border-[#4E60FF] bg-[#F3F4FF]': step == 2 }]"
-        class="transition-all mt-5   border-2 flex py-3 px-5 rounded-2xl cursor-pointer ">
-        <div class="inline-block mt-1 transition-all">
-          <div class="bg-[#EDEEF2] inline-block p-3 rounded-xl" :class="[{ 'bg-bl ': step == 2 }]">
-            <v-icon name="co-location-pin" :class="[{ 'text-[#fff]': step == 2 }]" class="text-[#A1A2B4]" scale="1.3" />
+      </RouterLink>
+      <RouterLink :to="{ name: 'address' }">
+        <div @click="type(2)" :class="[{ 'border-[#4E60FF] bg-[#F3F4FF]': step == 2 }]"
+          class="transition-all mt-5   border-2 flex py-3 px-5 rounded-2xl cursor-pointer ">
+          <div class="inline-block mt-1 transition-all">
+            <div class="bg-[#EDEEF2] inline-block p-3 rounded-xl" :class="[{ 'bg-bl ': step == 2 }]">
+              <v-icon name="co-location-pin" :class="[{ 'text-[#fff]': step == 2 }]" class="text-[#A1A2B4]" scale="1.3" />
+            </div>
+          </div>
+          <div class="flex flex-col my-auto ml-5">
+            <h5 class="p-0 block">Personal</h5>
+            <p class="p-0 block">Keep your order in one place</p>
           </div>
         </div>
-        <div class="flex flex-col my-auto ml-5">
-          <h5 class="p-0 block">Personal</h5>
-          <p class="p-0 block">Keep your order in one place</p>
-        </div>
-      </div>
+      </RouterLink>
+      <RouterLink :to="{ name: 'payment' }">
       <div @click="type(3)" :class="[{ 'border-[#4E60FF] bg-[#F3F4FF]': step == 3 }]"
         class="transition-all mt-5   border-2 flex py-3 px-5 rounded-2xl cursor-pointer ">
         <div class="inline-block mt-1 transition-all">
@@ -38,6 +43,8 @@
           <p class="p-0 block">Keep your order in one place</p>
         </div>
       </div>
+    </RouterLink>
+    <RouterLink :to="{ name: 'security' }">
       <div @click="type(4)" :class="[{ 'border-[#4E60FF] bg-[#F3F4FF]': step == 4 }]"
         class="transition-all mt-5   border-2 flex py-3 px-5 rounded-2xl cursor-pointer ">
         <div class="inline-block mt-1 transition-all">
@@ -50,8 +57,9 @@
           <p class="p-0 block">Keep your order in one place</p>
         </div>
       </div>
+    </RouterLink>
     </div>
-    <div class="w-full ml-16" v-if="user != null">
+    <div class="w-full ml-16" v-if="user != null && currentName == 'user'">
       <h1>Account</h1>
       <div class="boxx border border-spacing-2 rounded-xl p-6 pt-5">
         <h3>Personal information</h3>
@@ -134,6 +142,8 @@
         </form>
       </div>
     </div>
+    <!-- {{ currentName }} -->
+    <router-view></router-view>
   </div>
 </template>
 <script>
@@ -142,21 +152,43 @@ import { gettersTypes } from '@/modules/type'
 
 export default {
   data() {
-    return {
-      step: 1,
+    var steps = 0;
+    switch (this.$route.name) {
+      case 'user':
+        steps = 1;
+        break;
+      case 'address':
+        steps = 2;
+        break;
+      case 'payment':
+        steps = 3;
+        break;
+      case 'security':
+        steps = 4;
+        break;
+      default:
+        steps = 1;
+        break;
     }
+    return { step: steps,}
   },
   computed: {
     ...mapGetters({
       user: gettersTypes.user,
       isLogedIn: gettersTypes.isLogedIn,
     }),
+    currentName() {
+      return this.$route.name;
+    },
   },
   methods: {
     type(number) {
       this.step = number;
     }
-  }
+  },
+  mounted() {
+     this.data;
+   },
 }
 </script>
 <style></style>

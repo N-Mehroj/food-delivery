@@ -19,5 +19,7 @@ export const logoFooter = '../src/assets/img/logo/footer.png'
 
 export const banner = '../src/assets/img/Group.jpg'
 
+export const maps = 'http://localhost:5173/src/assets/img/map.png' 
+
 export const signUp = '../src/assets/img/logo/signUp.png'
 export const signImg = '../src/assets/img/sign.jpg'

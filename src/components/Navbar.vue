@@ -62,10 +62,11 @@
 <script>
 import { mapGetters } from 'vuex';
 import { gettersTypes } from '@/modules/type'
-import { logo } from '../constants/index.js'
+// import { logo } from '../constants/index.js'
+const logo = 'http://localhost:5173/src/assets/img/logo/main.png ';
 
 export default {
-
+    
     data() {
         return {
             logo,

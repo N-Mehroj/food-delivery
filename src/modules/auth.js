@@ -6,7 +6,7 @@ const state = {
     isLoading: false,
     phone: null,
     error: null,
-    isLogedIn: null,
+    isLogedIn: false,
     data:null,
 }
 const getters = {
@@ -23,7 +23,7 @@ const getters = {
         return state.data
     }
 }
-
+ 
 
 const mutations = {
     registerStart(state){

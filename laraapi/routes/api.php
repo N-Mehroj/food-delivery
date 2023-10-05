@@ -27,6 +27,8 @@ Route::post('phone', [Expressapi::class, 'phone']);
 Route::post('login', [Expressapi::class, 'login']);
 Route::get('userdata', [Expressapi::class, 'allUserData']);
 
+Route::post('geo', [Expressapi::class, 'location']);
+
 
 Route::post('ower_login', [Expressapi::class, 'owlogin']);
 // Route::get('ower_data', [Expressapi::class, 'owerdata']);

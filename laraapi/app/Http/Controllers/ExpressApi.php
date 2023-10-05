@@ -154,12 +154,12 @@
             }
         }
 
-        public function logout (Request $request) {
-            $token = $request->user()->token();
-            $token->revoke();
-            $response = ['message' => 'You have been successfully logged out!'];
+        public function location (Request $request) {
+            $response = $request->all();
+
             return response($response, 200);
         }
+
         public function allUserData (Request $request) {
             $users = User::all();
             if($users != null) {

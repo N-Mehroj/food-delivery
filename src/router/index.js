@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import {HomeView,LoginView,ForgotView,SignUpView,UserView,NotFoundView} from '@/views'
+import {HomeView,LoginView,ForgotView,SignUpView,UserView,AddressView,PaymentView,SecurityView,NotFoundView} from '@/views'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -27,7 +27,24 @@ const router = createRouter({
     {
       path: '/user/:id',
       component: UserView,
-      name: 'user',      
+      name: 'user',
+      children: [
+        {
+        path: 'address',
+        component: AddressView,
+        name: 'address',
+        },
+        {
+        path: 'payment',
+        component: PaymentView,
+        name: 'payment',
+        },
+        {
+        path: 'security',
+        component: SecurityView,
+        name: 'security',
+        },
+      ]      
     },
     {
       path: '/:notFound',
