@@ -25,17 +25,20 @@
             :detailed-controls="detailedControls" @map-was-initialized="mapWasInitializedHandler">
             <ymap-marker marker-id="123" :coords="activeCoords" :icon="markerIcon" :balloon-template="balloonTemplate" />
         </yandex-map> -->
-        <YandexMap :coordinates="coordinates" :detailed-controls="detailedControls" :controls="controls"
-            map-type="hybrid" />
+        <yandex-map :settings="settings" :zoom="zoom" :coords="activeCoords" :controls="controls" :behaviors="behaviors"
+            :detailed-controls="detailedControls" @map-was-initialized="mapWasInitializedHandler">
+            <ymap-marker marker-id="123" :coords="activeCoords" :icon="markerIcon" :balloon-template="balloonTemplate" />
+        </yandex-map>
 
     </div>
 </template>
 <script setup>
-import { yandexMap } from 'vue-yandex-maps'
-const coordinates = [55, 33];
-const controls = ['fullscreenControl'];
-const detailedControls = { zoomControl: { position: { right: 10, top: 50 } } };
+// import { yandexMap } from 'vue-yandex-maps'
+// const coordinates = [55, 33];
+// const controls = ['fullscreenControl'];
+// const detailedControls = { zoomControl: { position: { right: 10, top: 50 } } };
 </script>
+
 <!-- <script setup>
      const settings = {
     apiKey: '0c141633-b9db-4970-ad6f-9f53a2d7e24a',
@@ -46,16 +49,75 @@ const detailedControls = { zoomControl: { position: { right: 10, top: 50 } } };
 }
 </script> -->
 <script>
-import { YandexMap } from 'vue-yandex-maps';
+import { VueYandexMap, YandexMap, ymapSettings } from "vue-yandex-maps";
 
 export default {
 
-    components: { YandexMap },
+    data: () => ({
+        coords: [[55.753215, 37.622504], [59.939095, 30.315868]],
+        zoom: 10,
+        controls: ["zoomControl", "geolocationControl", "searchControl"],
+        behaviors: ["drag"],
+        detailedControls: {
+            zoomControl: {
+                position: {
+                    right: 10,
+                    top: 100
+                }
+            },
+            geolocationControl: {
+                float: "right"
+            },
+            searchControl: {
+                float: "right"
+            }
+        },
+
+        settings: {
+            apiKey: "0c141633-b9db-4970-ad6f-9f53a2d7e24a",
+            lang: "en",
+            coordorder: "latlong",
+            version: "2.1"
+        },
+
+        picked: 0,
+        options: [
+            { label: "Moscow", value: 0 },
+            { label: "Saint Petersburg", value: 1 }
+        ],
+        markerIcon: {
+            layout: "default#imageWithContent",
+            imageHref: "//image.flaticon.com/icons/svg/2150/2150467.svg",
+            imageSize: [100, 100],
+            imageOffset: [-50, 0],
+            content: "Vue",
+            contentOffset: [-10, 15],
+            contentLayout:
+                '<div style="background: skyblue; width: 50px; color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
+        }
+    }),
+
+    methods: {
+        mapWasInitializedHandler(map) {
+            console.log(map);
+        }
+    },
 
     computed: {
         currentName() {
             return this.$route.name;
         },
+        activeCoords() {
+            return this.coords[this.picked];
+        },
+        balloonTemplate() {
+            return `
+        <h1 class="red">Hi, everyone!</h1>
+        <p>I am here: ${this.activeCoords}</p>
+        <img src="http://via.placeholder.com/350x150">
+      `;
+        }
+
     },
 
 }
