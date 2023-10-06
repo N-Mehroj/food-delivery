@@ -11,41 +11,41 @@
         </h5>
       </div>
     </div>
-    <div class="grid gap-12 grid-cols-1 md:grid-cols-2">
+    <div class="grid gap-[30px] grid-cols-1 md:grid-cols-2">
       <div
-        class="bg-[#F3F4FF] rounded-xl overflow-hidden relative h-96 lg:h-72"
+        class="bg-[#F3F4FF] rounded-xl overflow-hidden relative h-96 lg:h-[188px]"
       >
         <img
           :src="iceCream"
           alt=""
           srcset=""
-          class="mt-32 lg:mt-2 mx-auto w-[300px] lg:w-1/2 lg:ml-0"
+          class="mt-32 lg:mt-1 mx-auto w-[224px] h-[224px] lg:ml-0"
         />
         <div
           class="text mt-1 absolute top-0 right-0 flex justify-between flex-wrap w-full lg:w-1/2 lg:flex-col"
         >
           <h4 class="mb-6">All deserts</h4>
           <p class="lg:order-last">Deserts</p>
-          <h1 class="mb-32 lg:mb-20 text-[#4E60FF] font-black w-full">
+          <h1 class="mb-32 lg:mb-2 text-[#4E60FF] font-black w-full">
             20% OFF
           </h1>
         </div>
       </div>
       <div
-        class="bg-[#FFF3ED] rounded-xl h-80 overflow-hidden relative lg:flex h-96 lg:h-72"
+        class="bg-[#FFF3ED] rounded-xl overflow-hidden relative lg:flex h-96 lg:h-[188px]"
       >
         <img
           :src="gamburger"
           alt="gamburger"
           srcset=""
-          class="mt-32 lg:mt-2 mx-auto w-[300px] lg:w-1/2 lg:ml-0"
+          class="mt-32 lg:mt-1 mx-auto w-[300px] h-[188px] lg:ml-0"
         />
         <div
           class="text mt-1 absolute top-0 right-0 flex justify-between flex-wrap w-full lg:w-1/2 lg:flex-col"
         >
           <h4 class="mb-6">Big Burgers</h4>
           <p class="lg:order-last">Fooddies</p>
-          <h1 class="mb-32 lg:mb-20 text-[#FD6D22] font-black w-full">
+          <h1 class="mb-32 lg:mb-2 text-[#FD6D22] font-black w-full">
             50% OFF
           </h1>
         </div>

@@ -1,7 +1,7 @@
 <template>
   <div>
     <div
-      class="top-0 border-b-2 border-slate-100 fixed w-full bg-white mb-96 z-40"
+      class="top-0 border-b-2 border-slate-100 fixed w-full bg-white mb-96 z-40 h-[90px]"
     >
       <nav class="container-wrapper">
         <div class="nav-container justify-between flex pt-6 pb-2 w-full">
