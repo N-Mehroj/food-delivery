@@ -1,5 +1,5 @@
 <template>
-  <div class="login grid gap-0 md:grid-cols-2 xl:grid-cols-12 2xl:grid-cols-12">
+  <div class="login grid gap-0 md:grid-cols-2 xl:grid-cols-12">
     <div
       class="container pt-6 2xl:pl-40 xl:pl-40 lg:pl-20 md:px-10 xl:col-span-5"
     >
