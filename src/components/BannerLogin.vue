@@ -4,7 +4,7 @@
   >
     <img :src="banner" alt="" srcset="" class="mx-auto mt-20" />
     <h1 class="text-white">Leave reiews for all meals</h1>
-    <p class="mt-8 text-sm">
+    <p class="mt-8 text-sm max-w-lg mx-auto">
       Lorem ipsum dolor sit amet, magna scaevola his ei. Cum te paulo probatus
       molestiae, eirmod assentior eum ne, et omnis antiopam mel.
     </p>
