@@ -18,11 +18,12 @@ body {
   letter-spacing: 0.1px;
 }
 .container-wrapper {
-  max-width: 1200px;
-  padding: 0px 20px;
+  max-width: 1300px;
+  padding: 0px 30px;
   margin-left: auto;
   margin-right: auto;
 }
+
 .menu > a {
   padding: 10px;
   font-size: 1.1em;
