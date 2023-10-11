@@ -1,14 +1,14 @@
 <template>
   <div
-    class="grid 2xl:gap-56 lg:grid-cols-1 xl:grid-cols-12 2xl:grid-cols-12 w-full px-4 sm:px-10 md:px-0"
+    class="grid lg:grid-cols-1 xl:grid-cols-12 2xl:grid-cols-12 w-full px-4 sm:px-10 md:px-0"
   >
     <div
-      class="overflow-hidden bg-[#687AFD] hidden md:flex md:pl-10 xl:col-span-5 relative"
+      class="overflow-hidden bg-[#687AFD] hidden md:flex md:h-[350px] xl:h-auto md:pl-10 xl:col-span-5 relative"
     >
-      <div class="2xl:pl-52">
+      <div class="2xl:pl-20">
         <img :src="signUp" alt="logo" class="mt-5" />
         <div
-          class="signText xl:mt-32 mt-14 pb-6 2xl:pr-36 md:w-[55%] xl:md:w-[100%]"
+          class="signText xl:mt-32 mt-14 pb-6 2xl:pr-4 md:w-[380px] xl:w-[500px]"
         >
           <h1 class="text-white leading-tight font-medium xl:text-5xl text-4xl">
             A few steps to create your restaurant or personal account
@@ -22,11 +22,10 @@
       <img
         :src="signImg"
         alt=""
-        class="rounded-xl absolute left-[54%] top-[-76%] xl:top-[70%] xl:left-[-55%] w-[850px]"
-        style="transform: rotate(-15deg)"
+        class="rounded-xl absolute left-[54%] top-[-320px] xl:top-[70%] xl:left-[-15%] w-[850px] rotate-15 xl:rotate-[20deg]"
       />
     </div>
-    <div class="mt-4 md:pl-10 xl:col-span-7 xl:mr-10 xl:ml-16 2xl:pr-64 ">
+    <div class="mt-4 md:pl-10 xl:col-span-7 xl:mr-10 xl:ml-16 2xl:pr-15">
       <div class="cl">
         <img :src="logo" alt="" class="w-24 md:hidden" />
         <div class="step inline-blocks flex mt-6">
@@ -45,7 +44,7 @@
               { 'bg-[#8CDFB7]': step > 1 },
               { 'bg-[#E3E3E8]': step == 1 },
             ]"
-            class="box transition-all rounded-xl w-12 sm:w-24 md:w-40 lg:w-60 h-[3px] inline-block my-auto mx-2"
+            class="box transition-all rounded-xl w-12 sm:w-24 md:w-40 lg:w-60 xl:w-40 h-[3px] inline-block my-auto mx-2"
           ></div>
           <div
             class="rounded-full w-4 h-4 flex justify-center bg-[#687AFD]"
@@ -62,7 +61,7 @@
               { 'bg-[#8CDFB7]': step > 2 },
               { 'bg-[#E3E3E8]': step <= 2 },
             ]"
-            class="box transition-all rounded-xl w-12 sm:w-24 md:w-40 lg:w-60 h-[3px] inline-block my-auto mx-2"
+            class="box transition-all rounded-xl w-12 sm:w-24 md:w-40 lg:w-60 xl:w-40 h-[3px] inline-block my-auto mx-2"
           ></div>
 
           <div
@@ -80,7 +79,7 @@
               { 'bg-[#8CDFB7]': step > 3 },
               { 'bg-[#E3E3E8]': step <= 3 },
             ]"
-            class="box transition-all rounded-xl w-12 sm:w-24 md:w-40 lg:w-60 h-[3px] inline-block my-auto mx-2"
+            class="box transition-all rounded-xl w-12 sm:w-24 md:w-40 lg:w-60 xl:w-40 h-[3px] inline-block my-auto mx-2"
           ></div>
           <div
             class="rounded-full w-4 h-4 flex justify-center bg-[#687AFD]"
@@ -94,7 +93,9 @@
           </div>
         </div>
 
-        <div class="mt-4 font-semibold tracking-wider text-[#C7C8D2] flex">
+        <div
+          class="mt-4 font-semibold tracking-wider text-[#C7C8D2] flex lg:w-[1000px] xl:w-[700px]"
+        >
           <p
             class="w-20 sm:w-32 md:w-36 lg:w-64 text-sm"
             :class="[{ 'text-black': step >= 1 }]"
@@ -102,19 +103,19 @@
             Account type
           </p>
           <p
-            class="w-20 sm:w-32 md:w-36 lg:w-64 md:ml-16 lg:ml-24 text-sm"
+            class="w-20 sm:w-32 md:w-36 lg:w-64 md:ml-16 lg:ml-24 xl:ml-10 text-sm"
             :class="[{ 'text-black': step >= 2 }]"
           >
             Personal details
           </p>
           <p
-            class="w-20 sm:w-32 md:w-36 lg:w-64 md:ml-10 lg:ml-24 text-sm"
+            class="w-20 sm:w-32 md:w-36 lg:w-64 md:ml-10 lg:ml-24 xl:ml-10 text-sm"
             :class="[{ 'text-black': step >= 3 }]"
           >
             Additional info
           </p>
           <p
-            class="w-20 sm:w-32 md:w-36 lg:w-64 md:ml-12 ml-0 lg:ml-24 text-sm"
+            class="w-20 sm:w-32 md:w-36 lg:w-64 md:ml-12 ml-0 lg:ml-24 xl:ml-10 text-sm"
             :class="[{ 'text-black': step >= 4 }]"
           >
             Confirmation
