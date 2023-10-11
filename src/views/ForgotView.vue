@@ -1,7 +1,7 @@
 <template>
   <div class="login grid gap-0 grid-cols-1 md:grid-cols-2 xl:grid-cols-12">
     <div
-      class="container pt-4 2xl:pl-40 xl:pl-40 lg:pl-20 md:px-9 xl:col-span-5"
+      class="container pt-4 2xl:pl-40 xl:pl-40 lg:pl-20 md:px-9 xl:col-span-5 h-screen"
     >
       <img :src="logo" alt="" class="w-24" />
       <div class="mt-7 md:mt-32 xl:mt-24 flex">

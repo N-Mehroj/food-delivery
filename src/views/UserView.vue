@@ -1,5 +1,5 @@
 <template>
-  <div class="container flex">
+  <div class="container flex mt-28">
     <div class="settings inline-block" style="width: 400px;">
       <h1>Settings</h1>
       <RouterLink :to="{ name: 'user' }">

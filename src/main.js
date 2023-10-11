@@ -4,6 +4,8 @@ import router from './router'
 import store from './store'
 import uiComponents from './ui-components'
 
+import YmapPlugin from 'vue-yandex-maps'
+
 import '@/assets/style.css'
 import '@/assets/tailwind.css'
 
@@ -20,6 +22,15 @@ uiComponents.map(component => {
      app.component(component.name, component)
 })
 // console.log(uiComponents)
+const settings = {
+     apiKey: '0c141633-b9db-4970-ad6f-9f53a2d7e24a',
+     lang: 'ru_RU',
+     coordorder: 'latlong',
+     enterprise: false,
+     version: '2.1'
+   }
+
+app.use(YmapPlugin, settings)
 app.use(router)
 app.use(store)
 

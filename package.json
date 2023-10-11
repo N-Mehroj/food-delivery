@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@maptiler/sdk": "^1.1.2",
+    "@vueuse/nuxt": "^10.5.0",
     "axios": "^1.5.0",
     "oh-vue-icons": "^1.0.0-rc3",
     "pinia": "^2.1.6",
