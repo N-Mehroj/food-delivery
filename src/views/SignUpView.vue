@@ -1,6 +1,6 @@
 <template>
   <div
-    class="grid lg:grid-cols-1 xl:grid-cols-12 2xl:grid-cols-12 w-full px-4 sm:px-10 md:px-0"
+    class="grid lg:grid-cols-1 xl:grid-cols-12 2xl:grid-cols-12 w-full px-4 sm:px-10 md:px-0 h-screen"
   >
     <div
       class="overflow-hidden bg-[#687AFD] hidden md:flex md:h-[350px] xl:h-auto md:pl-10 xl:col-span-5 relative"
