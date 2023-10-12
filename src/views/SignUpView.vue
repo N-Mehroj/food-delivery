@@ -1,6 +1,6 @@
 <template>
   <div
-    class="grid lg:grid-cols-1 xl:grid-cols-12 2xl:grid-cols-12 w-full px-4 sm:px-10 md:px-0"
+    class="grid lg:grid-cols-1 xl:grid-cols-12 2xl:grid-cols-12 w-full px-4 sm:px-10 md:px-0 h-screen"
   >
     <div
       class="overflow-hidden bg-[#687AFD] hidden md:flex md:h-[350px] xl:h-auto md:pl-10 xl:col-span-5 relative"
@@ -22,7 +22,7 @@
       <img
         :src="signImg"
         alt=""
-        class="rounded-xl absolute left-[54%] top-[-320px] xl:top-[70%] xl:left-[-15%] w-[850px] rotate-15 xl:rotate-[20deg]"
+        class="rounded-xl absolute left-[54%] top-[-320px] xl:top-[70%] xl:left-[-15%] w-[850px] rotate-[-15deg] xl:rotate-[20deg]"
       />
     </div>
     <div class="mt-4 md:pl-10 xl:col-span-7 xl:mr-10 xl:ml-16 2xl:pr-15">
@@ -132,7 +132,7 @@
           <p class="text-[#6f6f72] mt-4">
             Register to create your restaurant or personal account
           </p>
-          <div class="flex flex-wrap md:mt-6 justify-between">
+          <div class="flex flex-wrap md:mt-6 justify-between 2xl:max-w-xl">
             <div
               @click="type(true)"
               :class="[{ 'border-[#4E60FF] bg-[#F3F4FF]': typeName }]"
@@ -191,70 +191,80 @@
         </div>
 
         <div
-          class="mt-28 bloc"
+          class="mt-10 bloc"
           :class="[{ 'steps hidden': step > 2 }, { hidden: step != 2 }]"
         >
-          <div class="inline-block pr-32">
-            <h1 class="text-6xl">Personal details</h1>
+          <div class="inline-block xl:pr-32">
+            <h1 class="md:text-6xl text-4xl">Personal details</h1>
             <p class="text-[#6f6f72] mt-4">
               Enter your that you will use for entering
             </p>
-            <form @submit.prevent class="mt-7 pr-60">
-              <label>Full Name</label>
-              <Input
-                type="text"
-                placeholder="full name"
-                :value="fullName"
-                @input="fullName = $event.target.value"
-              />
-              <label>Email</label>
-              <Input
-                type="email"
-                placeholder="name@exmple.com"
-                :value="email"
-                @input="email = $event.target.value"
-              />
-              <label>Password</label>
-              <Input
-                type="password"
-                placeholder="min.8 characters"
-                :value="password"
-                @input="password = $event.target.value"
-              />
+            <form @submit.prevent class="mt-7 w-full xl:w-[360px]">
+              <div class="w-[90vw] xl:w-full">
+                <label>Email</label>
+                <Input
+                  type="text"
+                  placeholder="name@example.com"
+                  :value="fullName"
+                  @input="fullName = $event.target.value"
+                />
+              </div>
+              <div class="md:flex xl:block justify-between">
+                <div class="w-[90vw] md:w-[43vw] xl:w-full">
+                  <label>Password</label>
+                  <Input
+                    type="password"
+                    placeholder="min 8 characters"
+                    :value="email"
+                    @input="email = $event.target.value"
+                  />
+                </div>
+                <div class="w-[90vw] md:w-[43vw] xl:w-full">
+                  <label> Comfirm password</label>
+                  <Input
+                    type="password"
+                    placeholder="min.8 characters"
+                    :value="password"
+                    @input="password = $event.target.value"
+                  />
+                </div>
+              </div>
 
-              <button
-                @click="onSubmit(2)"
-                type="submit"
-                class="hover:text-[#4E60FF] w-full bg-[#4E60FF] mt-6 text-white py-3 rounded-lg hover:bg-white border transition-colors border-[#4E60FF]"
-              >
-                Continue
-              </button>
-              <p
-                class="text-[#A1A2B4] mt-4 cursor-pointer text-center"
-                @click="back(2)"
-              >
-                Back
-              </p>
+              <div class="md:flex xl:block md:items-center md:flex-row-reverse">
+                <button
+                  @click="onSubmit(2)"
+                  type="submit"
+                  class="hover:text-[#4E60FF] w-full md:w-[200px] xl:w-full bg-[#4E60FF] mt-6 md:ml-10 xl:ml-0 text-white py-3 rounded-lg hover:bg-white border transition-colors border-[#4E60FF]"
+                >
+                  Continue
+                </button>
+                <p
+                  class="text-[#A1A2B4] mt-4 cursor-pointer text-center"
+                  @click="back(2)"
+                >
+                  Back
+                </p>
+              </div>
             </form>
           </div>
         </div>
         <div
-          class="mt-28 bloc"
+          class="mt-10 bloc"
           :class="[{ 'steps hidden': step > 3 }, { hidden: step != 3 }]"
         >
-          <div class="pr-32">
-            <h1 class="text-6xl">Additional info</h1>
-            <p class="text-[#6f6f72] mt-4">
-              Enter your additional information (*is't recommend)
-            </p>
-            <form @submit.prevent class="mt-7 pr-60">
-              <label>Phone number</label>
-              <Input
-                type=""
-                placeholder="(99) 999 - 99 - 99"
-                :value="phone"
-                @input="phone = $event.target.value"
-              />
+          <div class="xl:pr-32">
+            <h1 class="md:text-6xl text-4xl">Additional info</h1>
+            <p class="text-[#6f6f72] mt-4">Enter your additional information</p>
+            <form @submit.prevent class="mt-7 w-full xl:w-[360px]">
+              <div class="w-[90vw] xl:w-full">
+                <label>Phone number</label>
+                <Input
+                  type=""
+                  placeholder="(99) 999 - 99 - 99"
+                  :value="phone"
+                  @input="phone = $event.target.value"
+                />
+              </div>
               <div class="flex items-center">
                 <input
                   type="checkbox"
@@ -264,24 +274,28 @@
                   >Turn on 2 authentification</label
                 >
               </div>
-              <button
-                @click="onSubmitPhone(3)"
-                type="submit"
-                class="hover:text-[#4E60FF] w-full bg-bl mt-6 text-white py-3 rounded-lg hover:bg-white border transition-colors border-[#4E60FF]"
+              <div
+                class="md:flex md:mr-[5vw] xl:mr-0 xl:block md:items-center md:flex-row-reverse"
               >
-                Continue
-              </button>
-              <p
-                class="text-[#A1A2B4] mt-4 cursor-pointer text-center"
-                @click="back(3)"
-              >
-                Back
-              </p>
+                <button
+                  @click="onSubmitPhone(3)"
+                  type="submit"
+                  class="hover:text-[#4E60FF] w-full md:w-[200px] xl:w-full bg-[#4E60FF] mt-6 md:ml-10 xl:ml-0 text-white py-3 rounded-lg hover:bg-white border transition-colors border-[#4E60FF]"
+                >
+                  Continue
+                </button>
+                <p
+                  class="text-[#A1A2B4] mt-4 cursor-pointer text-center"
+                  @click="back(3)"
+                >
+                  Back
+                </p>
+              </div>
             </form>
           </div>
         </div>
         <div
-          class="mt-28 pr-48 bloc"
+          class="mt-10 bloc"
           :class="[{ 'steps hidden': step > 4 }, { hidden: step != 4 }]"
         >
           <div class="success-checkmark">
