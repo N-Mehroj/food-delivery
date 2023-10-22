@@ -106,6 +106,92 @@ body {
 .bg-bl {
   background: #4e60ff !important;
 }
+.tx-bl {
+    color: #4e60ff !important;
+}
 .bg-gr {
   background: #19bf6f !important;
 }
+.ymaps-2-1-79-copyright__link, .ymaps-2-1-79-copyright__text, .ymaps-2-1-79-gotoymaps__container{
+  display: none;
+}
+.ymaps-2-1-79-float-button{
+  border-radius: 10px !important;
+  top: 5px;
+  left: 3px;
+}
+.ymaps-2-1-79-listbox{
+  border-radius: 50px !important;
+  right: 10px;
+}
+.ymaps-2-1-79-zoom__minus {
+   top: 90px;
+}
+.ymaps-2-1-79-float-button-icon_icon_geolocation{
+    right: 0px !important;
+}
+.ymaps-2-1-79-zoom__plus {
+   top: 50px;
+}
+
+/* POPUP ============= */
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+.active{
+  visibility: visible;
+  opacity: 1;
+  z-index: 1000;
+}
+
+.popup {
+  margin: 70px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 60%;
+  position: relative;
+  transition: all 3s ease-in-out;
+  z-index: 1000;
+}
+
+.popup h2 {
+  margin-top: 0;
+  color: #333;
+  font-family: Tahoma, Arial, sans-serif;
+}
+.popup .closes {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+
+.popup .content {
+  max-height: 35%;
+  overflow: auto;
+}
+
+@media screen and (max-width: 700px){
+  .box{
+    width: 80%;
+  }
+  .popup{
+    width: 80%;
+  }
+}
+
+
+

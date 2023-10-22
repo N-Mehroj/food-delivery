@@ -99,7 +99,9 @@
     <div
       class="mb-8 grid lg:gap-9 lg:grid-cols-3 md:grid-cols-3 md:gap-3 sm:grid-cols-2 sm:gap-5 grid-cols-1 gap-5 mt-12"
     >
+    <RouterLink :to="{path: '/restaurants/' + '1'}">
       <Product />
+    </RouterLink>
     </div>
 
     <!-- LOAD  MORE -------   ==== MORE -->

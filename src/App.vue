@@ -18,13 +18,12 @@
        <!-- <h1>{{ this.$route.path }}</h1> -->
     </div>
   </div>
-  
 </template>
 
 <script >
 
 
-import { Navbar, Product, Footer } from '@/components/'
+import { Navbar, Product, Footer,Map } from '@/components/'
 import { RouterView } from "vue-router"
 
 import { mapState } from 'vuex'
@@ -53,7 +52,8 @@ export default {
   components: {
     Navbar,
     Product,
-    Footer
+    Footer,
+    Map
   },
   async mounted() {
     await this.$store.dispatch("getUsers")

@@ -7,6 +7,7 @@ export {default as UserView} from './UserView.vue'
 export {default as AddressView} from './AddressView.vue'
 export {default as PaymentView} from './PaymentView.vue'
 export {default as SecurityView} from './SecurityView.vue'
+export {default as RestaurantsView} from './RestaurantsView.vue'
 
 
  

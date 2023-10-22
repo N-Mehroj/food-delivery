@@ -1,7 +1,7 @@
 <template>
   <div class="login grid gap-0 md:grid-cols-2 xl:grid-cols-12">
     <div
-      class="container pt-6 2xl:pl-40 xl:pl-40 lg:pl-20 md:px-10 xl:col-span-5"
+      class="container pt-6 2xl:pl-40 xl:pl-40 lg:pl-20 md:px-10 xl:col-span-5 h-screen"
     >
       <img :src="logo" alt="" class="w-24" />
       <div class="login-cot mt-16 md:mt-40 xl:mt-32 xl:pr-12 2xl:mt-20">
@@ -66,18 +66,18 @@
   </div>
 </template>
 <script>
-import { mapState } from 'vuex';
-import { logo, banner } from '../constants/';
-import { BannerLogin } from '@/components/';
+import { mapState } from "vuex";
+import { logo, banner } from "../constants/";
+import { BannerLogin } from "@/components/";
 export default {
   data() {
     return {
       logo,
       banner,
 
-      email: '',
-      password: '',
-      checkbox: 'asds',
+      email: "",
+      password: "",
+      checkbox: "asds",
     };
   },
   computed: {
@@ -97,12 +97,12 @@ export default {
         chackbox: this.chackbox,
       };
       this.$store
-        .dispatch('login', data)
+        .dispatch("login", data)
         .then((user) => {
-          console.log('user', user);
-          this.$router.push({ name: 'home' });
+          console.log("user", user);
+          this.$router.push({ name: "home" });
         })
-        .catch((err) => console.log('error', err));
+        .catch((err) => console.log("error", err));
     },
   },
 };

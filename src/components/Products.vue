@@ -1,6 +1,6 @@
 <template>
-    <div class="rounded-xl overflow-hidden border-2">
-        <!-- <div class="mr-0 relative px-2 py-1 bg-[#4E60FF] text-white rounded-xl">futured</div> -->
+    <!-- <div class="mr-0 relative px-2 py-1 bg-[#4E60FF] text-white rounded-xl">futured</div> -->
+    <!-- <div class="rounded-xl overflow-hidden border-2">
         <img :src="product" alt="" class="w-full">
         <div class="p-3 mt-4 mb-3">
             <div class="flex justify-between">
@@ -29,7 +29,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <div class="rounded-xl overflow-hidden border-2">
         <img :src="product" alt="" class="w-full">
         <div class="p-3 mt-4 mb-3">

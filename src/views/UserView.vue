@@ -143,12 +143,14 @@
       </div>
     </div>
     <!-- {{ currentName }} -->
+    
     <router-view></router-view>
   </div>
 </template>
 <script>
 import { mapGetters } from 'vuex';
 import { gettersTypes } from '@/modules/type'
+
 
 export default {
   data() {
@@ -189,6 +191,8 @@ export default {
   mounted() {
      this.data;
    },
+
 }
+
 </script>
 <style></style>
