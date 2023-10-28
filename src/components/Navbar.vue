@@ -22,7 +22,7 @@
               <div class="line hidden"></div>
               <RouterLink :to="{ name: 'orders' }" class="hover:text-[#4E60FF] h-12">My orders</RouterLink>
               <div class="line"></div>
-              <RouterLink :to="{ name: 'login' }" class="mr-3">
+              <RouterLink :to="{ name: 'my_card' }" class="mr-3">
                 <div class="bg-[#F3F4FF] p-3 rounded-xl -mt-3">
                   <v-icon name="ri-shopping-bag-3-line" class="text-[#4E60FF]" scale="1.3" />
                   <p class="noti">99</p>

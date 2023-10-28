@@ -11,6 +11,7 @@ export {default as OrdersView} from './OrdersView.vue'
 export {default as LoginView} from './LoginView.vue'
 export {default as ForgotView} from './ForgotView.vue'
 export {default as SignUpView} from './SignUpView.vue'
+export {default as MyCardView} from './MyCardView.vue'
 
 export {default as NotFoundView} from './NotFoundView.vue'
 
