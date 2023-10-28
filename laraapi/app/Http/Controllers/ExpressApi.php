@@ -17,6 +17,7 @@ use Illuminate\Support\Str;
 // use App\Http\Controllers\ChackConroller;
 
 use App\Models\User;
+use App\Models\Address;
 use App\Models\Product;
 use App\Models\Restorans;
 use App\Models\Besket;
@@ -35,9 +36,10 @@ class Expressapi extends Controller
         $token = str_replace('Token ', '', $header);
         if ($token != null) {
             $user = User::where('token', $token)->first();
+            $user = [$user, $user->address];
             return $user;
         } else {
-            return response(null, 404);
+            return response(null, 304);
         }
     }
 
@@ -170,13 +172,35 @@ class Expressapi extends Controller
         return response($response, 200);
     }
 
-    public function allUserData(Request $request)
+    public function setAddress(Request $request)
     {
-        $users = User::all();
-        if ($users != null) {
-            return $users;
+        $response = $request->all();
+        $data = $response['data'];
+        $header = $request->header('Authorization');
+        $token = str_replace('Token ', '', $header);
+
+        $userData = User::where('token', $token)->first();
+        $id = $userData->id;
+        // $userData->address = $data[1];
+
+        $addrCoun = Address::where('user_id', $id)->get();
+        $addrCoun = $addrCoun->count();
+        if ($addrCoun < 2) {
+            $setAddress = new Address([
+                'address' => $data[1],
+                'address_area' => $data[0],
+                'lat' => $data[2],
+                'lng' => $data[3],
+                'user_id' => $id,
+             ]);
+            $setAddress->save();
+           return response()->json(['message' => 'Add map successfully','address' => $userData->address], 201);
+        }else{
+            return response()->json(['error' => 'Error you can\'t add'], 400);
         }
     }
+
+
 
     public function owlogin(Request $request)
     {

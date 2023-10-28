@@ -1,18 +1,30 @@
 <template>
   <!-- <input type="text" v-model="" /> -->
-  <div class="grid md:grid-cols-2 sm:grid-cols-1 mb-3">
-    <Input class="rounded-md w-full mb-0" type="text" placeholder="Address" :value="refData" />
-    <button  class="md:ml-4 md:w-36 sm:w-full sm:mt-2 md:mt-0 sm:ml-0 hover:text-[#4E60FF] px-2 py-3 bg-[#4E60FF] h-12 text-white rounded-xl hover:bg-white border transition-colors border-[#4E60FF]">add map</button>
-  </div>
-  <div id="my-custom-balloon" style="border-radius: 30px; overflow: hidden; width: 100%; height: 400px; position: relative;">
-    <v-icon name="hi-solid-location-marker" class="tx-bl" style="position: absolute; top: 45%; left: 50%; transform: translate(-50%, -50%); z-index: 100;" scale="2.1" />
+  <div id="my-custom-balloon" style="
+      border-radius: 30px;
+      overflow: hidden;
+      width: 100%;
+      height: 400px;
+      position: relative;
+    ">
+    <v-icon name="hi-solid-location-marker" class="tx-bl" style="
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 100;
+      " scale="2.1" />
     <div id="map" style="width: 100%; height: 400px"></div>
   </div>
 </template>
 <script setup>
 import { ref } from "vue";
+// import { useStore } from "vuex";
+import { useStoreData } from "../store/store";
+
 ymaps.ready(init);
 var refData = ref([""]);
+var refAddress = ref([""]);
 
 function init() {
   var myPlacemark,
@@ -28,7 +40,6 @@ function init() {
         searchControlProvider: "yandex#search",
       }
     );
-
 
   var zoomControl = myMap.controls.get("zoomControl");
   var layer = myMap.controls.get("typeSelector");
@@ -99,8 +110,21 @@ function init() {
   function getData(coords) {
     ymaps.geocode(coords).then(function (res) {
       var firstGeoObject = res.geoObjects.get(0);
-      //  console.log(firstGeoObject.getAddressLine());
       refData.value = firstGeoObject.getAddressLine();
+      // console.log(firstGeoObject.properties._data.description);
+      // console.log(firstGeoObject.properties._data.text);
+      // console.log(firstGeoObject.properties._data.boundedBy[0][0]);
+      // console.log(firstGeoObject.properties._data.boundedBy[0][1]);
+      var area = firstGeoObject.properties._data.description;
+      var address = firstGeoObject.properties._data.text;
+      var lat = firstGeoObject.properties._data.boundedBy[0][0];
+      var lng = firstGeoObject.properties._data.boundedBy[0][1];
+
+      refAddress.value = [area, address, lat, lng];
+
+      const store = useStoreData();
+
+      store.address = refAddress.value;
     });
   }
   createPlacemark(myMap.getCenter());
@@ -109,11 +133,7 @@ function init() {
 </script>
 <script>
 export default {
-  methods: {
-    updateDateValues() {
-      console.log("updateDateValue");
-    },
-  },
+  methods: {},
 };
 </script>
 

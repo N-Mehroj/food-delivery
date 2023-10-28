@@ -162,4 +162,4 @@ const actions = {
         localStorage.removeItem('token')
     },
 }
-export default {state, mutations, actions,getters,}     
+export default {state, mutations, actions,getters}     

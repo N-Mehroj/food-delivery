@@ -164,7 +164,8 @@
             <form @submit.prevent class="mt-7 w-full xl:w-[360px]">
               <div class="w-[90vw] xl:w-full">
                 <label>Phone number</label>
-                <Input type="number" placeholder="(99) 999 - 99 - 99" :value="phone" @input="phone = $event.target.value" />
+                <Input type="number" placeholder="(99) 999 - 99 - 99" :value="phone"
+                  @input="phone = $event.target.value" />
               </div>
               <div class="flex items-center">
                 <input type="checkbox"
@@ -204,9 +205,28 @@
     </div>
   </div>
 </template>
+<script setup>
+// import { onMounted } from "vue";
+// import { useRouter, useRoute } from "vue-router";
+// const store = useStoreData();
+// const router = useRouter();
+
+// function routerPush() {
+//   if (store.user) {
+//     router.push({ name: "home" });
+//   }
+// }
+// onMounted(() => {
+//   routerPush();
+// });
+</script>
 <script>
-import { mapState } from 'vuex';
+// import { mapState } from 'vuex';
 import { signUp, signImg, logo } from '../constants/';
+
+import { mapState, mapActions } from "pinia";
+import { useStoreData } from "@/store/store";
+
 export default {
   data() {
     return {
@@ -222,12 +242,14 @@ export default {
     };
   },
   computed: {
-    ...mapState({
-      isLoading: (state) => state.auth.isLoading,
-      error: (state) => state.auth.error,
-    }),
+    ...mapState(useStoreData, ["isLoading","error"]),
+    // ...mapState({
+    //   isLoading: (state) => state.auth.isLoading,
+    //   error: (state) => state.auth.error,
+    // }),
   },
   methods: {
+    ...mapActions(useStoreData, { register: "register",phones: "phone"  }),
     onSubmit(number) {
       number++;
 
@@ -237,8 +259,9 @@ export default {
         password_confirmation: this.password_confirmation,
         type: this.typeName,
       };
-      this.$store
-        .dispatch('register', data)
+      // this.$store
+      //   .dispatch('register', data)
+        this.register(data)
         .then((user) => {
           this.step = number;
           console.log('user', user);
@@ -255,13 +278,14 @@ export default {
           phone: this.phone,
           // token: localStorage.getItem('token'),
         };
-        this.$store
-        .dispatch('phone', phoneData)
-        .then((phone) => {
-          // console.log('phone', phone);
-          console.log(this.step);
-          // this.$router.push({ name: 'home' })
-        });
+        // this.$store
+        //   .dispatch('phone', phoneData)
+          this.phones(phoneData)
+          .then((phone) => {
+            // console.log('phone', phone);
+            console.log(this.step);
+            // this.$router.push({ name: 'home' })
+          });
       }
     },
     type(type) {

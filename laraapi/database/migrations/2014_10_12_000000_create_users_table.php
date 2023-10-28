@@ -19,7 +19,6 @@ return new class extends Migration
             $table->string('password');
             $table->boolean('phone_verification')->nullable()->default(false);
             $table->boolean('email_verification')->nullable()->default(false);
-            $table->string('adress')->nullable();
             $table->string('token');
             $table->string('lang')->default('en');
             $table->string('user_bonus')->nullable()->default(0);

@@ -31,6 +31,8 @@ Route::post('geo', [Expressapi::class, 'location']);
 
 
 Route::post('ower_login', [Expressapi::class, 'owlogin']);
+
+Route::post('setAddress', [Expressapi::class, 'setAddress']);
 // Route::get('ower_data', [Expressapi::class, 'owerdata']);
 
 Route::get('testAutentification', [Expressapi::class, 'TestAutentification']);
