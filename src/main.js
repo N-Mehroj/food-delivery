@@ -3,11 +3,9 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import router from "./router";
 import store from "./store";
-import { createPinia } from 'pinia'
+import { createPinia } from "pinia";
 // import { pinia } from './store/store';
 import uiComponents from "./ui-components";
-
-
 
 import "@/assets/style.css";
 import "@/assets/tailwind.css";
@@ -26,7 +24,11 @@ import {
   BiInstagram,
   IoChevronBackOutline,
   BiCheck,
-  HiSolidLocationMarker
+  HiSolidLocationMarker,
+  HiSolidMinus,
+  HiSolidPlus,
+  BiTrash,
+  MdKeyboardbackspaceOutlined
 } from "oh-vue-icons/icons";
 
 addIcons(
@@ -42,7 +44,11 @@ addIcons(
   BiInstagram,
   IoChevronBackOutline,
   BiCheck,
-  HiSolidLocationMarker
+  HiSolidLocationMarker,
+  HiSolidMinus,
+  HiSolidPlus,
+  BiTrash,
+  MdKeyboardbackspaceOutlined
 );
 
 const app = createApp(App);
@@ -51,7 +57,7 @@ app.component("v-icon", OhVueIcon);
 uiComponents.map((component) => {
   app.component(component.name, component);
 });
-const pinia = createPinia()
+const pinia = createPinia();
 
 app.use(pinia);
 app.use(router);
