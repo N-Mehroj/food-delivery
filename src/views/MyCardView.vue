@@ -1,15 +1,14 @@
 <template>
   <div class="mt-28 container-wrapper">
     <h2>My card</h2>
-
-    <div class="gap-6 grid-cols-3 grid mt-4">
-      <div class="col-span-2">
+    <div class="gap-6 xl:grid-cols-3 grid-cols-1 grid mt-4">
+      <div class="xl:col-span-2">
         <div class="border rounded-2xl p-3 px-4">
           <div class="flex gap-2 items-end cardMeal">
             <h3>Menu</h3>
             <p class="text-base text-gray-400">4 meals</p>
           </div>
-          <div class="flex w-full item-center justify-between py-4 border-b">
+          <div class="md:flex w-full item-center justify-between py-4 border-b">
             <div class="flex gap-3 text-start">
               <img
                 class="w-20 h-20 rounded-xl object-cover object-center"
@@ -20,13 +19,12 @@
                 <p class="text-sm font-semibold">Chicken & Ribs Combo</p>
                 <p class="p-0">
                   Lorem ipsum dolor sit amet consectetur
-                  <br class="hidden lg:block" />
+                  <br class="hidden md:block" />
                   adipisicing elit. Soluta dicta dolorum, pariatur
                 </p>
               </div>
             </div>
-
-            <div class="flex items-center space-x-6">
+            <div class="flex items-center gap-6 mt-5 lg:mt-0 justify-between">
               <div class="space-x-2.5 mr-6">
                 <button class="w-7 h-7 text-center rounded-full bg-slate-100">
                   <v-icon name="hi-solid-minus" />
@@ -36,14 +34,16 @@
                   <v-icon name="hi-solid-plus" />
                 </button>
               </div>
-              <span class="text-lg font-semibold">$12.40</span>
-              <v-icon
-                name="bi-trash"
-                class="cursor-pointer hover:text-rose-400 ease-in duration-100 text-gray-500"
-              />
+              <div class="flex gap-5 lg:gap-7 items-center">
+                <span class="text-lg font-semibold">$12.40</span>
+                <v-icon
+                  name="bi-trash"
+                  class="cursor-pointer hover:text-rose-400 ease-in duration-100 text-gray-500"
+                />
+              </div>
             </div>
           </div>
-          <div class="flex w-full item-center justify-between py-4 border-b">
+          <div class="md:flex w-full item-center justify-between py-4 border-b">
             <div class="flex gap-3 text-start">
               <img
                 class="w-20 h-20 rounded-xl object-cover object-center"
@@ -54,13 +54,12 @@
                 <p class="text-sm font-semibold">Chicken & Ribs Combo</p>
                 <p class="p-0">
                   Lorem ipsum dolor sit amet consectetur
-                  <br class="hidden lg:block" />
+                  <br class="hidden md:block" />
                   adipisicing elit. Soluta dicta dolorum, pariatur
                 </p>
               </div>
             </div>
-
-            <div class="flex items-center space-x-6">
+            <div class="flex items-center gap-6 mt-5 lg:mt-0 justify-between">
               <div class="space-x-2.5 mr-6">
                 <button class="w-7 h-7 text-center rounded-full bg-slate-100">
                   <v-icon name="hi-solid-minus" />
@@ -70,14 +69,16 @@
                   <v-icon name="hi-solid-plus" />
                 </button>
               </div>
-              <span class="text-lg font-semibold">$12.40</span>
-              <v-icon
-                name="bi-trash"
-                class="cursor-pointer hover:text-rose-400 ease-in duration-100 text-gray-500"
-              />
+              <div class="flex gap-5 lg:gap-7 items-center">
+                <span class="text-lg font-semibold">$12.40</span>
+                <v-icon
+                  name="bi-trash"
+                  class="cursor-pointer hover:text-rose-400 ease-in duration-100 text-gray-500"
+                />
+              </div>
             </div>
           </div>
-          <div class="flex w-full item-center justify-between py-4 border-b">
+          <div class="md:flex w-full item-center justify-between py-4 border-b">
             <div class="flex gap-3 text-start">
               <img
                 class="w-20 h-20 rounded-xl object-cover object-center"
@@ -88,13 +89,12 @@
                 <p class="text-sm font-semibold">Chicken & Ribs Combo</p>
                 <p class="p-0">
                   Lorem ipsum dolor sit amet consectetur
-                  <br class="hidden lg:block" />
+                  <br class="hidden md:block" />
                   adipisicing elit. Soluta dicta dolorum, pariatur
                 </p>
               </div>
             </div>
-
-            <div class="flex items-center space-x-6">
+            <div class="flex items-center gap-6 mt-5 lg:mt-0 justify-between">
               <div class="space-x-2.5 mr-6">
                 <button class="w-7 h-7 text-center rounded-full bg-slate-100">
                   <v-icon name="hi-solid-minus" />
@@ -104,14 +104,16 @@
                   <v-icon name="hi-solid-plus" />
                 </button>
               </div>
-              <span class="text-lg font-semibold">$12.40</span>
-              <v-icon
-                name="bi-trash"
-                class="cursor-pointer hover:text-rose-400 ease-in duration-100 text-gray-500"
-              />
+              <div class="flex gap-5 lg:gap-7 items-center">
+                <span class="text-lg font-semibold">$12.40</span>
+                <v-icon
+                  name="bi-trash"
+                  class="cursor-pointer hover:text-rose-400 ease-in duration-100 text-gray-500"
+                />
+              </div>
             </div>
           </div>
-          <div class="flex w-full item-center justify-between py-4 border-b">
+          <div class="md:flex w-full item-center justify-between py-4 border-b">
             <div class="flex gap-3 text-start">
               <img
                 class="w-20 h-20 rounded-xl object-cover object-center"
@@ -122,13 +124,12 @@
                 <p class="text-sm font-semibold">Chicken & Ribs Combo</p>
                 <p class="p-0">
                   Lorem ipsum dolor sit amet consectetur
-                  <br class="hidden lg:block" />
+                  <br class="hidden md:block" />
                   adipisicing elit. Soluta dicta dolorum, pariatur
                 </p>
               </div>
             </div>
-
-            <div class="flex items-center space-x-6">
+            <div class="flex items-center gap-6 mt-5 lg:mt-0 justify-between">
               <div class="space-x-2.5 mr-6">
                 <button class="w-7 h-7 text-center rounded-full bg-slate-100">
                   <v-icon name="hi-solid-minus" />
@@ -138,23 +139,23 @@
                   <v-icon name="hi-solid-plus" />
                 </button>
               </div>
-              <span class="text-lg font-semibold">$12.40</span>
-              <v-icon
-                name="bi-trash"
-                class="cursor-pointer hover:text-rose-400 ease-in duration-100 text-gray-500"
-              />
+              <div class="flex gap-5 lg:gap-7 items-center">
+                <span class="text-lg font-semibold">$12.40</span>
+                <v-icon
+                  name="bi-trash"
+                  class="cursor-pointer hover:text-rose-400 ease-in duration-100 text-gray-500"
+                />
+              </div>
             </div>
           </div>
         </div>
-
-        <div class="flex gap-2 text-blue-500 text-center mt-5">
+        <div class="flex gap-2 text-blue-500 text-center lg:mt-5 mt-8">
           <v-icon name="md-keyboardbackspace-outlined" />
           <a class="font-semibold" href="">Add more meals</a>
         </div>
       </div>
-
-      <div>
-        <div class="border rounded-2xl p-3 px-4">
+      <div class="grid xl:grid-cols-1 md:grid-cols-2 gap-10">
+        <div class="border rounded-2xl p-4">
           <div class="flex rounded-3xl bg-slate-200 p-1">
             <button class="py-4 rounded-3xl w-1/2 text-lg font-medium">
               Delivery
@@ -173,7 +174,7 @@
           <p class="text-sm text-gray-400">Uzbekistan tashkent, UZB</p>
           <span class="text-md text-gray-500">Lorem ipsum dolor sit amet.</span>
         </div>
-        <div class="border rounded-2xl p-3 px-4 mt-8">
+        <div class="border rounded-2xl p-4 h-fit xl:mt-8">
           <h3 class="text-gray-700">Payment summary</h3>
           <div class="space-y-2">
             <div class="flex justify-between">
