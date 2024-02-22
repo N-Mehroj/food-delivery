@@ -22,8 +22,16 @@ npm install
 npm run dev
 ```
 
-### Compile and Minify for Production
+### Laravel customize configuration
 
 ```sh
 npm run build
+```
+### Compile and Minify for Production
+
+```sh
+composer install
+```
+```sh
+php artisan key:ganerate 
 ```
